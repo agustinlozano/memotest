@@ -1,0 +1,18 @@
+
+
+.elf-txt {
+    animation: elf-txt 4s ease infinite;
+    -moz-animation: elf-txt 4s ease infinite;
+    -webkit-animation: elf-txt 4s ease infinite;
+}
+
+@keyframes elf-txt {
+    0%, 100% {
+        text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16;
+        color: #FED128;
+    }
+    50% {
+        text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B;
+        color: #806914;
+    }
+}

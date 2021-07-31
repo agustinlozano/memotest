@@ -1,16 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Press+Start+2P&family=Tangerine:wght@700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/index.css">
+    <link rel="stylesheet" href="src/css/animation.css">
     <title>Memotest</title>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Hello, world!</h1>
-    </div>
+    <h1>
+        <div class="container">
+            <small class="small-txt">THE</small>
+            <div class="row justify-content-center">
+                <div class="col-5 p-0 d-flex align-items-wnd justify-content-end">
+                    <span class="big-txt">L</span>
+                    <div class="d-flex align-items-center">
+                        <span class="medium-txt">ORD</span>
+                    </div>
+                </div>
+
+                <div class="col-2 p-0 d-flex flex-column justify-content-center align-items-center">
+                    <small class="small-txt">OF</small>
+                    <small class="small-txt">THE</small>
+                </div>
+
+                <div class="col-5 p-0 d-flex align-items-center">
+                    <span class="big-txt">R</span>
+                    <div class="d-flex align-items-center">
+                        <span class="medium-txt">ING</span>
+                    </div>
+                    <span class="big-txt">S</span>
+                </div>
+            </div>
+        </div>
+    </h1>
+    <div class="container"><p class="elf-txt">Eltharin Memotest</p></div>
+
+    <section id="#">
+        <div id="tablero">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <img src="src/img/lotr-aragorn.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-aragorn.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-frodo.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-frodo.jpg" class="img-fluid img" alt="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <img src="src/img/lotr-sam.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-sam.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-gandalf.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-gandalf.jpg" class="img-fluid img" alt="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <img src="src/img/lotr-gollum.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-gollum.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-sauron.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-sauron.jpg" class="img-fluid img" alt="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <img src="src/img/lotr-legolas.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-legolas.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-gimli.jpg" class="img-fluid img" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="src/img/lotr-gimli.jpg" class="img-fluid img" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        // Objetivo
+
+        /*  Hacer que al primer scroll en la aplicacion, el background color cambie
+         *  desde izquierda a derecha con algun tipo de efecto, y a su vez encienda 
+         *  la animacion de respiracion con css para el elf-text.
+         * 
+         * 
+         */
+        
+        const $elfText = document.querySelector('.elf-text');
+        targetElement.onscroll = (event) => {
+            
+        }
+    </script>
 </body>
+
 </html>

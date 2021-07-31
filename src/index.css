@@ -1,0 +1,64 @@
+/* Colores */
+:root {
+    --dark: #22181C;
+    --light: #F6E8EA;
+    --rosew: #5A0001;
+    --frose: #F45B69;
+}
+
+html {
+    font-family: 'Press Start 2P', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Tangerine', cursive;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+/* Titulo */
+h1 {
+    font-family: 'PT Serif', cursive;
+    font-weight: bold;
+    font-size: 95px;
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 span small {
+    width: 100%;
+}
+
+h1 small {
+    font-size: 25px;
+}
+h1 .small-txt {
+    font-size: 35px;
+}
+
+h1 .medium-txt {
+    font-size: 85px;
+}
+
+h1 .big-txt {
+    font-size:  120px;
+}
+
+.elf-txt {
+    font-family: 'Tangerine', cursive;
+    font-size: 55px;
+    text-align: end;
+    color: var(--frose);
+}
+
+
+/* Tablero */
+#tablero {
+    max-height: 1vh;
+}
+
+#tablero .col {
+    background-color: transparent;
+    margin: 10px;
+}
