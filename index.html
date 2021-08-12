@@ -11,44 +11,67 @@
     <link
         href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Press+Start+2P&family=Tangerine:wght@700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/index.css">
-    <link rel="stylesheet" href="src/css/animation.css">
+    <!-- <link rel="stylesheet" href="src/css/animation.css"> -->
     <title>Memotest</title>
 </head>
 
 <body>
-    <h1>
-        <div class="container">
-            <small class="small-txt">THE</small>
-            <div class="row justify-content-center">
-                <div class="col-5 p-0 d-flex align-items-wnd justify-content-end">
-                    <span class="big-txt">L</span>
-                    <div class="d-flex align-items-center">
-                        <span class="medium-txt">ORD</span>
+    <section id="home">
+        <div id="lotr-txt">
+            <div class="container">
+                <small class="small-txt hide">THE</small>
+                <div class="row justify-content-center">
+                    <div class="col-5 p-0 d-flex align-items-wnd justify-content-end">
+                        <span class="big-txt">L</span>
+                        <div class="d-flex align-items-center">
+                            <span class="medium-txt">ORD</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-2 p-0 d-flex flex-column justify-content-center align-items-center">
-                    <small class="small-txt">OF</small>
-                    <small class="small-txt">THE</small>
-                </div>
-
-                <div class="col-5 p-0 d-flex align-items-center">
-                    <span class="big-txt">R</span>
-                    <div class="d-flex align-items-center">
-                        <span class="medium-txt">ING</span>
+                    <div class="col-2 p-0 d-flex flex-column justify-content-center align-items-center">
+                        <small class="small-txt">OF</small>
+                        <small class="small-txt">THE</small>
                     </div>
-                    <span class="big-txt">S</span>
+
+                    <div class="col-5 p-0 d-flex align-items-center">
+                        <span class="big-txt">R</span>
+                        <div class="d-flex align-items-center">
+                            <span class="medium-txt">ING</span>
+                        </div>
+                        <span class="big-txt">S</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </h1>
-    <div class="container"><p class="elf-txt">Eltharin Memotest</p></div>
 
-    <section id="#">
-        <div id="tablero">
+        <div class="container">
+            <h1 class="elf-txt">Lotr Memotest</h1>
+        </div>
+
+        <div class="container">
+            <div class="row h-100 my-4 align-items-center justify-content-center">
+                <div class="col-lg-3 mx-2" id="user-card">
+                    <form id="form">
+                        <p>Ingresa un nickname</p>
+                        <label for="user-nick">
+                            <input id="user-nick" class="rounded" type="text" name="nick" placeholder="Ej: DurinDwarF"
+                                required>
+                        </label>
+                    </form>
+                </div>
+                <a class="play-btn d-flex col-lg-3 align-items-center justify-content-center" id="start" href="#">
+                    Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="tablero" class="hide">
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -113,6 +136,8 @@
         </div>
     </section>
 
+    <script type="text/javascript" src="src/index.js"></script>
+
     <script type="text/javascript">
         // Objetivo
 
@@ -122,11 +147,11 @@
          * 
          * 
          */
-        
-        const $elfText = document.querySelector('.elf-text');
-        targetElement.onscroll = (event) => {
-            
-        }
+
+        // const $elfText = document.querySelector('.elf-text');
+        // targetElement.onscroll = (event) => {
+
+        // }
     </script>
 </body>
 
