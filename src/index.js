@@ -72,34 +72,3 @@ function compararClases(cuadros) {
 
     return respuesta;
 }
-
-function quitarColor(cuadro) {
-    cuadro.className = 'col cuadro bloqueado';
-}
-
-function quitarPersonaje(cuadro) {
-    cuadro.innerHTML = '';
-}
-
-function obtenerNombreUsuario() {
-    nickName = document.querySelector('#user-nick').value;
-}
-
-function mostrarTablero() {
-    const $tablero = document.querySelector('#tablero');
-
-    $tablero.className = '';
-}
-
-function bloquarInputUsuario() {
-    document.querySelectorAll('.cuadro').forEach(function($cuadro) {
-        $cuadro.onclick = function() {
-        };
-    });
-}
-
-function desbloquarInputUsuario() {
-    document.querySelectorAll('.cuadro').forEach(function($cuadro) {
-        $cuadro.onclick = manejarInputUsuario;
-    });
-}
