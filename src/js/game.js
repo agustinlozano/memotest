@@ -1,37 +1,119 @@
-function iniciarPartida() {
-    const tablero = {};
-
+//Iniciar partida
+function configurarTablero(tablero) {
     iniciarTablero(tablero);
     mezclarTablero(tablero);
-
-
     console.log(tablero);
+
+    return tablero;
 }
 
-//Iniciar tablero
 function iniciarTablero(tablero) {
     obtenerPersonajes(tablero);
     obtenerColores(tablero);
     obtenerCuadros(tablero);
 }
 
-//Mezclar tablero
-function mezclarTablero(tablero) { 
+function mezclarTablero(tablero) {
     const indicesMezclados = mezclarNumerosEntre(0, 15);
-    const cuadrosMezclados = mezclarCuadros(tablero, indicesMezclados);
+    mezclarColoresCuadros(tablero, indicesMezclados);
+}
 
-    tablero.elementos = cuadrosMezclados;
+function mezclarColoresCuadros(tablero, indices) {
+    const colores = tablero['colores'];
+    const coloresMezclados = mezclarColores(colores, indices);
+
+    tablero['colores'] = coloresMezclados;
+}
+
+function agregarColor(cuadro, colores) {
+    if (cuadro.id === 'cuadro-1') {
+        cuadro.className = `col cuadro ${colores[0]}`;
+    }
+    if (cuadro.id === 'cuadro-2') {
+        cuadro.className = `col cuadro ${colores[1]}`;
+    }
+    if (cuadro.id === 'cuadro-3') {
+        cuadro.className = `col cuadro ${colores[2]}`;
+    }
+    if (cuadro.id === 'cuadro-4') {
+        cuadro.className = `col cuadro ${colores[3]}`;
+    }
+    if (cuadro.id === 'cuadro-5') {
+        cuadro.className = `col cuadro ${colores[4]}`;
+    }
+    if (cuadro.id === 'cuadro-6') {
+        cuadro.className = `col cuadro ${colores[5]}`;
+    }
+    if (cuadro.id === 'cuadro-7') {
+        cuadro.className = `col cuadro ${colores[6]}`;
+    }
+    if (cuadro.id === 'cuadro-8') {
+        cuadro.className = `col cuadro ${colores[7]}`;
+    }
+    if (cuadro.id === 'cuadro-9') {
+        cuadro.className = `col cuadro ${colores[8]}`;
+    }
+    if (cuadro.id === 'cuadro-10') {
+        cuadro.className = `col cuadro ${colores[9]}`;
+    }
+    if (cuadro.id === 'cuadro-11') {
+        cuadro.className = `col cuadro ${colores[10]}`;
+    }
+    if (cuadro.id === 'cuadro-12') {
+        cuadro.className = `col cuadro ${colores[11]}`;
+    }
+    if (cuadro.id === 'cuadro-13') {
+        cuadro.className = `col cuadro ${colores[12]}`;
+    }
+    if (cuadro.id === 'cuadro-14') {
+        cuadro.className = `col cuadro ${colores[13]}`;
+    }
+    if (cuadro.id === 'cuadro-15') {
+        cuadro.className = `col cuadro ${colores[14]}`;
+    }
+    if (cuadro.id === 'cuadro-16') {
+        cuadro.className = `col cuadro ${colores[15]}`;
+    }
+}
+
+function agregarPersonaje(cuadro, personajes) {
+    const claseColor = cuadro.className;
+    console.log(claseColor);
+    if (claseColor === 'col cuadro color-1') {
+        cuadro.innerHTML = `${personajes[0]}`;
+    }
+    if (claseColor === 'col cuadro color-2') {
+        cuadro.innerHTML = `${personajes[1]}`;
+    }
+    if (claseColor === 'col cuadro color-3') {
+        cuadro.innerHTML = `${personajes[2]}`;
+    }
+    if (claseColor === 'col cuadro color-4') {
+        cuadro.innerHTML = `${personajes[3]}`;
+    }
+    if (claseColor === 'col cuadro color-5') {
+        cuadro.innerHTML = `${personajes[4]}`;
+    }
+    if (claseColor === 'col cuadro color-6') {
+        cuadro.innerHTML = `${personajes[5]}`;
+    }
+    if (claseColor === 'col cuadro color-7') {
+        cuadro.innerHTML = `${personajes[6]}`;
+    }
+    if (claseColor === 'col cuadro color-8') {
+        cuadro.innerHTML = `${personajes[7]}`;
+    }
 }
 
 function obtenerPersonajes(tablero) {
     tablero['personajes'] = [
-        'Aragorn', 
-        'Frodo', 
-        'Gandalf', 
-        'Gimli', 
-        'Gollum', 
-        'Legolas', 
-        'Sam', 
+        'Aragorn',
+        'Frodo',
+        'Gandalf',
+        'Gimli',
+        'Gollum',
+        'Legolas',
+        'Sam',
         'Sauron'
     ]
 }
@@ -70,14 +152,14 @@ function mezclarNumerosEntre(minimo, maximo) {
         let numeroAleatorio = generarNumeroEntre(minimo, maximo);
         let count = 0;
 
-        for (let i = 0; i<array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             if (numeroAleatorio === array[i]) {
                 break;
             } else {
                 count++;
             }
 
-            if (count === array.length-1) {
+            if (count === array.length - 1) {
                 array[posicion] = numeroAleatorio;
                 posicion++;
                 break;
@@ -104,15 +186,6 @@ function generarNumeroEntre(minimo, maximo) {
     return numero;
 }
 
-function mezclarCuadros(tablero, indices) { 
-    const colores = tablero['colores'];
-    const coloresMezclados = mezclarColores(colores, indices);
-
-    configurarCuadro(tablero, coloresMezclados);
-
-    return tablero.elementos;
-}
-
 function mezclarColores(colores, indices) {
     const coloresMezclados = [];
 
@@ -123,44 +196,33 @@ function mezclarColores(colores, indices) {
     return coloresMezclados;
 }
 
-function configurarCuadro(tablero, colores) {
-    const cuadros = tablero.elementos;
-    const personajes = tablero.personajes
+function quitarColor(cuadro) {
+    cuadro.className = 'col cuadro bloqueado';
+}
 
-    cuadros.forEach((cuadro, i) => {
-        if (colores[i] === 'color-1') {
-            cuadro.className = `col cuadro ${colores[i]}`;
-            cuadro.innerHTML = `${personajes[0]}`
-        }
-        if (colores[i] === 'color-2') {
-            cuadro.className = `col cuadro ${colores[i]}`;
-            cuadro.innerHTML = `${personajes[1]}`
-        }
-        if (colores[i] === 'color-3') {
-            cuadro.className = `col cuadro ${colores[i]}`;
-            cuadro.innerHTML = `${personajes[2]}`
-        }
-        if (colores[i] === 'color-4') {
-            cuadro.className = `col cuadro ${colores[i]}`;
-            cuadro.innerHTML = `${personajes[3]}`
-        }
-        if (colores[i] === 'color-5') {
-            cuadro.className = `col cuadro ${colores[i]}`;
-            cuadro.innerHTML = `${personajes[4]}`
-        }
-        if (colores[i] === 'color-6') {
-            cuadro.className = `col cuadro ${colores[i]}`;
-            cuadro.innerHTML = `${personajes[5]}`
-        }
-        if (colores[i] === 'color-7') {
-            cuadro.className = `col cuadro ${colores[i]}`;
-            cuadro.innerHTML = `${personajes[6]}`
-        }
-        if (colores[i] === 'color-8') {
-            cuadro.className = `col cuadro ${colores[i]}`;
-            cuadro.innerHTML = `${personajes[7]}`
-        }
+function quitarPersonaje(cuadro) {
+    cuadro.innerHTML = '';
+}
+
+function obtenerNombreUsuario() {
+    nickName = document.querySelector('#user-nick').value;
+}
+
+function mostrarTablero() {
+    const $tablero = document.querySelector('#tablero');
+
+    $tablero.className = '';
+}
+
+function bloquarInputUsuario() {
+    document.querySelectorAll('.cuadro').forEach(function($cuadro) {
+        $cuadro.onclick = function() {
+        };
     });
 }
 
-iniciarPartida();
+function desbloquarInputUsuario() {
+    document.querySelectorAll('.cuadro').forEach(function($cuadro) {
+        $cuadro.onclick = manejarInputUsuario;
+    });
+}
