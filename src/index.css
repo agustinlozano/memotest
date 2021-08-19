@@ -125,9 +125,9 @@ a:hover {
 }
 
 #tablero .col {
-    background-color: wheat;
     height: 100%;
     border: 2px solid var(--bg);
+    color: var(--bg);
 }
 
 .img {
