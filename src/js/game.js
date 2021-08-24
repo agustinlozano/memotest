@@ -214,14 +214,14 @@ function mostrarTablero() {
     $tablero.className = '';
 }
 
-function bloquarInputUsuario() {
+function bloquearInputUsuario() {
     document.querySelectorAll('.cuadro').forEach(function($cuadro) {
         $cuadro.onclick = function() {
         };
     });
 }
 
-function desbloquarInputUsuario() {
+function desbloquearInputUsuario() {
     document.querySelectorAll('.cuadro').forEach(function($cuadro) {
         $cuadro.onclick = manejarInputUsuario;
     });
