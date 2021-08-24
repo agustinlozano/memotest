@@ -44,6 +44,7 @@ function chequearPar(cuadros, cuadro, tablero, MS) {
         if (respuesta === 'acertado') {
             agregarColor(cuadro, coloresTablero);
             agregarPersonaje(cuadro, personajesTablero);
+            desbloquearInputUsuario();
         } else {
             cuadros.forEach(cuadro => {
                 quitarColor(cuadro);
