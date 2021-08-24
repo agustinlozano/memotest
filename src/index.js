@@ -1,3 +1,5 @@
+const tablero = {};
+let $cuadrosUsuario = [], count = 0;
 let nickName = 'usuario';
 
 document.querySelector('#start').onclick = function (event) {
@@ -7,31 +9,31 @@ document.querySelector('#start').onclick = function (event) {
 }
 
 function iniciarPartida() {
-    const tablero = {};
-    let $cuadrosUsuario = [], count = 0;
-
     configurarTablero(tablero);
     mostrarTablero();
 
     //Manejar el imput del usuario
     document.querySelectorAll('.cuadro').forEach($cuadro => {
-        $cuadro.onclick = function manejarInputUsuario(event) {
-            const $cuadroUsuario = event.target;
-            
-            $cuadrosUsuario.push($cuadroUsuario);
-
-            agregarColor($cuadroUsuario, tablero.colores);
-            agregarPersonaje($cuadroUsuario, tablero.personajes);
-            count++;
-
-            if (count === 2) {
-                chequearPar($cuadrosUsuario, $cuadroUsuario, tablero, 1500);
-
-                $cuadrosUsuario = [];
-                count = 0;
-            }
-        }
+        $cuadro.onclick = manejarInputUsuario;
     });
+}
+
+function manejarInputUsuario(event) {
+    const $cuadroUsuario = event.target;
+
+    $cuadrosUsuario.push($cuadroUsuario);
+
+    agregarColor($cuadroUsuario, tablero.colores);
+    agregarPersonaje($cuadroUsuario, tablero.personajes);
+    count++;
+
+    if (count === 2) {
+        console.log($cuadrosUsuario)
+        chequearPar($cuadrosUsuario, $cuadroUsuario, tablero, 1500);
+
+        $cuadrosUsuario = [];
+        count = 0;
+    }
 }
 
 function chequearPar(cuadros, cuadro, tablero, MS) {
@@ -46,14 +48,14 @@ function chequearPar(cuadros, cuadro, tablero, MS) {
             cuadros.forEach(cuadro => {
                 quitarColor(cuadro);
                 quitarPersonaje(cuadro);
-                //desbloquarInputUsuario();
+                desbloquearInputUsuario();
             });
         }
     }, MS);
-    
-    //bloquarInputUsuario();
+
     agregarColor(cuadro, coloresTablero);
     agregarPersonaje(cuadro, personajesTablero);
+    bloquearInputUsuario();
     let respuesta = compararClases(cuadros);
 
 }
@@ -64,7 +66,7 @@ function compararClases(cuadros) {
 
     const primerClase = primerCuadro.className;
     const segundaClase = segundoCuadro.className;
-    
+
     if (primerClase === segundaClase) {
         console.log(`Acertaste, ${nickName}!`);
         respuesta = 'acertado';
