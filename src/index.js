@@ -23,12 +23,11 @@ function manejarInputUsuario(event) {
 
     $cuadrosUsuario.push($cuadroUsuario);
 
-    agregarColor($cuadroUsuario, tablero.colores);
+    agregarClase($cuadroUsuario, tablero.clases);
     agregarPersonaje($cuadroUsuario, tablero.personajes);
     count++;
 
     if (count === 2) {
-        console.log($cuadrosUsuario)
         chequearPar($cuadrosUsuario, $cuadroUsuario, tablero, 1500);
 
         $cuadrosUsuario = [];
@@ -37,24 +36,24 @@ function manejarInputUsuario(event) {
 }
 
 function chequearPar(cuadros, cuadro, tablero, MS) {
-    const coloresTablero = tablero.colores;
+    const clasesTablero = tablero.clases;
     const personajesTablero = tablero.personajes;
 
     setTimeout(function () {
         if (respuesta === 'acertado') {
-            agregarColor(cuadro, coloresTablero);
+            agregarClase(cuadro, clasesTablero);
             agregarPersonaje(cuadro, personajesTablero);
             desbloquearInputUsuario();
         } else {
             cuadros.forEach(cuadro => {
-                quitarColor(cuadro);
+                quitarClase(cuadro);
                 quitarPersonaje(cuadro);
                 desbloquearInputUsuario();
             });
         }
     }, MS);
 
-    agregarColor(cuadro, coloresTablero);
+    agregarClase(cuadro, clasesTablero);
     agregarPersonaje(cuadro, personajesTablero);
     bloquearInputUsuario();
     let respuesta = compararClases(cuadros);
