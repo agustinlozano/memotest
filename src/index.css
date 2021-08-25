@@ -167,3 +167,7 @@ body::-webkit-scrollbar {
     height: 8px;
     display: none;
 }
+
+.bloqueado {
+    background-color: rgb(126, 121, 121);
+}
