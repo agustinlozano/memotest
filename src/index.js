@@ -1,3 +1,11 @@
+import { configurarTablero, mostrarTablero } from "./tablero.js";
+import { agregarClase,
+         agregarPersonaje,
+         quitarClase,
+         quitarPersonaje,
+         bloquearInputUsuario 
+        } from "./cuadros.js";
+
 const tablero = {};
 let $cuadrosUsuario = [], count = 0;
 let nickName = 'usuario';
@@ -73,4 +81,14 @@ function compararClases(cuadros) {
     }
 
     return respuesta;
+}
+
+function desbloquearInputUsuario() {
+    document.querySelectorAll('.cuadro').forEach(function($cuadro) {
+        $cuadro.onclick = manejarInputUsuario;
+    });
+}
+
+function obtenerNombreUsuario() {
+    nickName = document.querySelector('#user-nick').value;
 }
