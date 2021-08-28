@@ -1,4 +1,4 @@
-function configurarTablero(tablero) {
+export function configurarTablero(tablero) {
     iniciarTablero(tablero);
     mezclarTablero(tablero);
     console.log(tablero);
@@ -6,10 +6,16 @@ function configurarTablero(tablero) {
     return tablero;
 }
 
-function iniciarTablero(tablero) {
+export function iniciarTablero(tablero) {
     obtenerPersonajes(tablero);
     obtenerClases(tablero);
     obtenerCuadros(tablero);
+}
+
+export function mostrarTablero() {
+    const $tablero = document.querySelector('#tablero');
+
+    $tablero.className = '';
 }
 
 function mezclarTablero(tablero) {
@@ -114,10 +120,4 @@ function obtenerArrayNulo() {
 function generarNumeroEntre(minimo, maximo) {
     const numero = Math.floor(Math.random() * ((maximo + 1) - minimo) + minimo);
     return numero;
-}
-
-function mostrarTablero() {
-    const $tablero = document.querySelector('#tablero');
-
-    $tablero.className = '';
 }
