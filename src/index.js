@@ -1,10 +1,11 @@
 import { configurarTablero, mostrarTablero } from "./tablero.js";
-import { agregarClase,
-         agregarPersonaje,
-         quitarClase,
-         quitarPersonaje,
-         bloquearInputUsuario 
-        } from "./cuadros.js";
+import {
+    agregarClase,
+    agregarPersonaje,
+    quitarClase,
+    quitarPersonaje,
+    bloquearInputUsuario
+} from "./cuadros.js";
 
 const tablero = {};
 let $cuadrosUsuario = [], count = 0;
@@ -29,17 +30,23 @@ function iniciarPartida() {
 function manejarInputUsuario(event) {
     const $cuadroUsuario = event.target;
 
-    $cuadrosUsuario.push($cuadroUsuario);
+    console.log($cuadroUsuario.className);
 
-    agregarClase($cuadroUsuario, tablero.clases);
-    agregarPersonaje($cuadroUsuario, tablero.personajes);
-    count++;
+    if ($cuadroUsuario.className === 'img-fluid img') {
+        return false;
+    } else {
+        $cuadrosUsuario.push($cuadroUsuario);
 
-    if (count === 2) {
-        chequearPar($cuadrosUsuario, $cuadroUsuario, tablero, 1500);
+        agregarClase($cuadroUsuario, tablero.clases);
+        agregarPersonaje($cuadroUsuario, tablero.personajes);
+        count++;
 
-        $cuadrosUsuario = [];
-        count = 0;
+        if (count === 2) {
+            chequearPar($cuadrosUsuario, $cuadroUsuario, tablero, 1500);
+
+            $cuadrosUsuario = [];
+            count = 0;
+        }
     }
 }
 
@@ -83,12 +90,12 @@ function compararClases(cuadros) {
     return respuesta;
 }
 
-function obtenerNombreUsuario() {
-    nickName = document.querySelector('#user-nick').value;
-}
-
 function desbloquearInputUsuario() {
-    document.querySelectorAll('.cuadro').forEach(function($cuadro) {
+    document.querySelectorAll('.cuadro').forEach(function ($cuadro) {
         $cuadro.onclick = manejarInputUsuario;
     });
+}
+
+function obtenerNombreUsuario() {
+    nickName = document.querySelector('#user-nick').value;
 }
